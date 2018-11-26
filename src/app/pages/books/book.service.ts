@@ -5,9 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Book } from './book.model';
 
-const httpOptions = {
+/*const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-};
+};*/
 
 
 @Injectable()

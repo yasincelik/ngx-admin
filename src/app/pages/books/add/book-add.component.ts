@@ -11,7 +11,7 @@ export class BookAddComponent {
 
   book: Book = new Book();
 
-  constructor(private router: Router, private bookService: BookService) {
+  constructor(/*private router: Router, */private bookService: BookService) {
 
   }
 
