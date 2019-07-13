@@ -1,0 +1,86 @@
+<nb-card>
+  <nb-card-header>Selected Option: {{ bsoption }} > {{ boption }}</nb-card-header>
+  <nb-card-body>
+    <nb-stepper #stepper>
+      <nb-step [stepControl]="firstForm" label="Buy/Sell">
+        <form [formGroup]="firstForm" (ngSubmit)="onFirstSubmit()" class="step-container">
+          <div class="radio1 .col-9" ng-show="false" align="left">
+            <nb-radio-group [(ngModel)]="bsoption" formControlName="firstCtrl" name="buy-sell-radios">
+              <nb-radio *ngFor="let bsoption of buySellOptions"
+                        [value]="bsoption.value">
+                {{ bsoption.label }}
+              </nb-radio>
+            </nb-radio-group>
+
+          </div>
+          <div class="input-group">
+            <!--<input type="text" placeholder="Enter your name" class="form-control" formControlName="firstCtrl"
+                   [ngClass]="{'form-control-danger': firstForm.invalid && (firstForm.dirty || firstForm.touched)}">-->
+          </div>
+          <button nbButton nbStepperNext>next</button>
+        </form>
+      </nb-step>
+
+      <nb-step [stepControl]="secondForm" label="Choose Pattern">
+        <div id="buyStrategy" ng-show="false" class="radio2 .col-9" align="left">
+          <form [formGroup]="secondForm" (ngSubmit)="onSecondSubmit()" class="step-container">
+
+            <nb-radio-group [(ngModel)]="boption" formControlName="secondCtrl">
+              <nb-radio *ngFor="let boption of buyOptions"
+                        [value]="boption.value">
+                {{ boption.label }}
+                </nb-radio>
+              </nb-radio-group>
+
+            <!--<div class="input-group">
+              <input type="text" placeholder="Enter favorite movie" class="form-control" formControlName="secondCtrl"
+                     [ngClass]="{'form-control-danger': secondForm.invalid && (secondForm.dirty || secondForm.touched)}">
+            </div>-->
+            <button nbButton nbStepperPrevious>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </form>
+        </div>
+      </nb-step>
+
+      <nb-step [stepControl]="thirdForm" label="Rules">
+        <form [formGroup]="thirdForm" (ngSubmit)="onThirdSubmit()" class="step-container">
+          <div class="demo-checkboxes col-sm-4">
+            <nb-checkbox>Volume</nb-checkbox>
+            <input type="text" placeholder="Enter something" name="FirstName"  class="form-control" formControlName="thirdCtrl"
+                   [ngClass]="{'form-control-danger': thirdForm.invalid && (thirdForm.dirty || thirdForm.touched)}">
+          </div>
+
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton nbStepperNext>next</button>
+        </form>
+      </nb-step>
+
+      <nb-step [stepControl]="fourthForm" label="Save">
+        <form [formGroup]="fourthForm" (ngSubmit)="onFourthSubmit()" class="step-container">
+          <p class="lorem">
+            Save
+          </p>
+          <div class="input-group">
+            <input type="text" placeholder="Name" class="form-control" formControlName="fourthCtrl"
+                   [ngClass]="{'form-control-danger': fourthForm.invalid && (fourthForm.dirty || fourthForm.touched)}">
+          </div>
+          <div>
+            <p class="lorems">
+            <li *ngFor="let obj of thirdForm">{{obj | json}}</li>
+            </p>
+
+          </div>
+          <button nbButton nbStepperPrevious>prev</button>
+          <button nbButton nbStepperNext>Confirm</button>
+        </form>
+      </nb-step>
+
+      <nb-step [stepControl]="fourthForm" [hidden]="true" label="Save">
+        <div class="step-container">
+          <h3>Wizard completed!</h3>
+          <button nbButton (click)="stepper.reset()">Try again</button>
+        </div>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

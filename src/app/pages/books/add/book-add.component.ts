@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
 import { Book } from '../book.model';
 import { BookService } from '../book.service';
 
@@ -15,7 +13,7 @@ export class BookAddComponent {
 
   }
 
-  createUser(): void {
+  createBook(): void {
     this.bookService.createBook(this.book)
       .subscribe( data => {
         alert('Book created successfully.');

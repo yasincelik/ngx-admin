@@ -17,6 +17,124 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Dashboard',
+    icon: 'nb-home',
+    link: '/pages/iot-dashboard',
+  },
+  {
+    title: 'Strategy',
+    icon: 'nb-compose',
+    link: '/pages/strategy',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/strategy/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/strategy/list',
+      },
+    ],
+  },
+  /*{
+    title: 'Trading Plans',
+    icon: 'nb-shuffle',
+    link: '/pages/books',
+    children: [
+      {
+        title: 'Active Plans',
+        link: '/pages/books/add',
+      },
+      {
+        title: 'Add New Plan',
+        link: '/pages/books/list',
+      },
+      {
+        title: 'Plan List',
+        link: '/pages/books/list',
+      },
+      {
+        title: 'Plan Performances',
+        link: '/pages/books/list',
+      },
+    ],
+  },*/
+  {
+    title: 'Current Positions',
+    icon: 'nb-tables',
+    link: '/pages/books',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/books/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/books/list',
+      },
+    ],
+  },
+  {
+    title: 'Trades',
+    icon: 'nb-bar-chart',
+    link: '/pages/trades',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/trades/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/trades/list',
+      },
+    ],
+  },
+  {
+    title: 'Logs',
+    icon: 'nb-list',
+    link: '/pages/books',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/books/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/books/list',
+      },
+    ],
+  },
+  {
+    title: 'Backtesting',
+    icon: 'nb-loop-circled',
+    link: '/pages/books',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/books/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/books/list',
+      },
+    ],
+  },
+  {
+    title: 'Education',
+    icon: 'nb-lightbulb',
+    link: '/pages/books',
+    children: [
+      {
+        title: 'Add',
+        link: '/pages/books/add',
+      },
+      {
+        title: 'List',
+        link: '/pages/books/list',
+      },
+    ],
+  },
+  {
     title: 'Books',
     icon: 'nb-list',
     link: '/pages/books',

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Book } from './book.model';
+import { Strategy } from './strategy.model';
 
 /*const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -11,26 +11,26 @@ import { Book } from './book.model';
 
 
 @Injectable()
-export class BookService {
+export class StrategyService {
 
-  public API = '//localhost:8080';
-  public BOOK_API = this.API + '/api';
+  public API = '//localhost:8080/api';
+
 
 
   constructor(private http: HttpClient) {
   }
 
   getBooks(): Observable<any> {
-    return this.http.get('//localhost:8080/api/books');
+    return this.http.get(this.API + '/strategy');
   }
 
   get(id: number) {
-    return this.http.get(this.BOOK_API + '/books/' + id);
+    return this.http.get(this.API + '/strategy/' + id);
   }
 
-  public createBook(book) {
+  public createStrategy(strategy) {
     // let result: Observable<Object>;
-    return this.http.post<Book>(this.BOOK_API + '/books/create', book);
+    return this.http.post<Strategy>(this.API + '/strategy/create', strategy);
   }
 
   /*public createBook(book: any): Observable<any> {

@@ -1,0 +1,37 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  /deep/ nb-stepper .step-content {
+    text-align: center;
+
+    button {
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+
+  .radio1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .radio2 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .hideSell {
+    display: none;
+  }
+
+  .wrapper {
+    border: 1px dashed #95a5a6;
+    height: 56px;
+    margin-top: 16px;
+    border-radius: 4px;
+    position: relative;
+    font-size: 12px;
+  }
+}

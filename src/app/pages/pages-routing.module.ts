@@ -19,6 +19,12 @@ const routes: Routes = [{
     path: 'books',
     loadChildren: './books/books.module#BooksModule',
   }, {
+    path: 'trades',
+    loadChildren: './trades/trade.module#TradeModule',
+  }, {
+    path: 'strategy',
+    loadChildren: './strategy/strategy.module#StrategyModule',
+  }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
   }, {
